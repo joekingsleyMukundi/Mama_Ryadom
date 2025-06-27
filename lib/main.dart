@@ -1,6 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:mama_ryadom/screens/accounts_screen.dart';
+import 'package:mama_ryadom/screens/chat_list_screen.dart';
 import 'package:mama_ryadom/screens/forgot_password.dart';
+import 'package:mama_ryadom/screens/notifications_screen.dart';
 import 'package:mama_ryadom/screens/settings_screen.dart';
 import 'package:mama_ryadom/screens/sign_in_screen.dart';
 import 'package:mama_ryadom/screens/sign_up_screen.dart';
@@ -36,6 +39,9 @@ class MamaRyadomApp extends StatelessWidget {
         '/signup': (context) => const SignUpScreen(),
         '/forgot-password': (context) => const ForgotPasswordScreen(),
         '/settings': (context) => const SettingsScreen(),
+        '/account': (context) => const AccountScreen(),
+        '/notifications': (context) => const NotificationScreen(),
+        '/home': (context) => const ChatListScreen(),
       },
     );
   }
