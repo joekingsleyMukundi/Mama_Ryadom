@@ -186,7 +186,7 @@ class _ChatListScreenState extends State<ChatListScreen> {
       // Only update for Chat List or Direct Chat
       setState(() => _currentIndex = index);
       if (index == 1) {
-        Navigator.pushNamed(context, '/direct-chat');
+        Navigator.pushNamed(context, '/chat');
       }
     }
   }
@@ -233,7 +233,7 @@ class _ChatListScreenState extends State<ChatListScreen> {
         child: children.isEmpty
             ? Center(
                 child: Text(
-                  'No profiles added yet.\nTap "+" to add a child.',
+                  'No profiles added yet.\nTap "+" to add a child profile.',
                   textAlign: TextAlign.center,
                   style: TextStyle(
                     color: AppColors.text.withOpacity(0.6),
@@ -302,9 +302,9 @@ class _ChatListScreenState extends State<ChatListScreen> {
           child: ClipRRect(
             borderRadius: BorderRadius.circular(30),
             child: Container(
-              height: 58,
+              height: 55,
               decoration: BoxDecoration(
-                color: Colors.grey.shade200,
+                color: const Color.fromARGB(240, 238, 238, 238),
                 boxShadow: [
                   BoxShadow(
                     color: Colors.black12,
