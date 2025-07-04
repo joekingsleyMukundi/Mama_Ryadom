@@ -179,15 +179,14 @@ class _ChatListScreenState extends State<ChatListScreen> {
   }
 
   void _onTabTapped(int index) {
-    if (index == 2) {
-      // Don’t change currentIndex
+    if (index == 3) {
       Navigator.pushNamed(context, '/settings');
+    } else if (index == 1) {
+      Navigator.pushNamed(context, '/chat');
+    } else if (index == 2) {
+      Navigator.pushNamed(context, '/community');
     } else {
-      // Only update for Chat List or Direct Chat
       setState(() => _currentIndex = index);
-      if (index == 1) {
-        Navigator.pushNamed(context, '/chat');
-      }
     }
   }
 
@@ -202,7 +201,7 @@ class _ChatListScreenState extends State<ChatListScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: AppColors.background,
-      extendBody: true, // Important for floating effect
+      extendBody: true,
       appBar: AppBar(
         backgroundColor: AppColors.background,
         automaticallyImplyLeading: false,
@@ -227,9 +226,7 @@ class _ChatListScreenState extends State<ChatListScreen> {
         ],
       ),
       body: Padding(
-        padding: const EdgeInsets.only(
-          bottom: 80,
-        ), // Ensures chat list scrolls above nav bar
+        padding: const EdgeInsets.only(bottom: 80),
         child: children.isEmpty
             ? Center(
                 child: Text(
@@ -332,6 +329,10 @@ class _ChatListScreenState extends State<ChatListScreen> {
                   BottomNavigationBarItem(
                     icon: Icon(Icons.chat_bubble_outline),
                     label: 'Direct Chat',
+                  ),
+                  BottomNavigationBarItem(
+                    icon: Icon(Icons.forum_outlined),
+                    label: 'Community',
                   ),
                   BottomNavigationBarItem(
                     icon: Icon(Icons.settings_outlined),
